@@ -30,7 +30,7 @@ Or just quick and easy prototping for web enabled device.
 
 
 
-The library supplies sample .ino for ESP8266.
+The library supplies a sample .ino for ESP8266.
 
 As well, a sample code for node.js server.
 Dont forget to npm install your dependencies!
