@@ -19,12 +19,12 @@ Or just quick and easy prototping for web enabled device.
 
 
 
-  socket.emit("chat message", message);     // Easily emit function name and data.
+      socket.emit("chat message", message);     // Easily emit function name and data.
 
-  if (socket.on() && (fun == "chat message")){    // Or read whats being sent on the socket.
-    Serial.print("Message:\t");
-    Serial.println(dat);
-  }
+      if (socket.on() && (fun == "chat message")){    // Or read whats being sent on the socket.
+        Serial.print("Message:\t");
+        Serial.println(dat);
+      }
 
 
 
