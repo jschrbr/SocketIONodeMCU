@@ -13,25 +13,24 @@ Can be useful for those new to socket.io, or the ESP8266/NodeMCU.
 
 Or just quick and easy prototping for web enabled device.
 
-void loop() {
 
-  if (Serial.available()){
-    message = (Serial.readString());
-    message = message.substring(0, message.indexOf("\n")-1);
 
-    socket.emit("chat message", message); 
 
-    Serial.read();
-  }
 
-  if (socket.on() && (fun == "chat message")){
+
+
+  socket.emit("chat message", message);     // Easily emit function name and data.
+
+  if (socket.on() && (fun == "chat message")){    // Or read whats being sent on the socket.
     Serial.print("Message:\t");
     Serial.println(dat);
   }
 
-}
 
-The library supplies sample code of ESP.
+
+
+
+The library supplies sample .ino for ESP8266.
 
 As well, a sample code for node.js server.
 Dont forget to npm install your dependencies!
