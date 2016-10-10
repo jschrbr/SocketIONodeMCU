@@ -90,6 +90,7 @@ bool SocketIOClient::on() {
 	*databuffer = 0;
 
 	if (!client.connected()) {
+		Serial.println("Reconnecting...");
 		if (!connect(hostname, port)) return 0;
 	}
 
