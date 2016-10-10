@@ -37,36 +37,12 @@ bool SocketIOClient::connect(char thehostname[], int theport) {
 	return readHandshake();
 }
 
-
-bool SocketIOClient::reconnect(char thehostname[], int theport){
-	if (!client.connect(thehostname, theport)) return false;
-	hostname = thehostname;
-	port = theport;
-	sendHandshake(hostname);
-	return readHandshake();
-}
-
 bool SocketIOClient::connected() {
 	return client.connected();
 }
 
 void SocketIOClient::disconnect() {
 	client.stop();
-}
-
-// find the nth colon starting from dataptr
-void SocketIOClient::findColon(char which) {
-	while (*dataptr) {
-		if (*dataptr == ':') {
-			if (--which <= 0) return;
-		}
-		++dataptr;
-	}
-}
-
-// terminate command at dataptr at closing double quote
-void SocketIOClient::terminateCommand(void) {
-	dataptr[strlen(dataptr) - 3] = 0;
 }
 
 void SocketIOClient::socker(int index) {

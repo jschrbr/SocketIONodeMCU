@@ -36,10 +36,8 @@ class SocketIOClient {
 
 public:
 	bool connect(char hostname[], int port = 80);
-	bool connectHTTP(char hostname[], int port = 80);
 	bool connected();
 	void disconnect();
-	bool reconnect(char hostname[], int port = 80);
 	bool on();
 	void emit(String fun, String dat);
 	void heartbeat(int select);
@@ -58,8 +56,6 @@ private:
 	char *hostname;
 	int port;
 
-	void findColon(char which);
-	void terminateCommand(void);
 	bool waitForInput(void);
 	void eatHeader(void);
 };
