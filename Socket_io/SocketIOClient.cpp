@@ -90,7 +90,7 @@ bool SocketIOClient::on() {
 	*databuffer = 0;
 
 	if (!client.connected()) {
-		if (!client.connect(hostname, port)) return 0;
+		if (!connect(hostname, port)) return 0;
 	}
 
 	if (!client.available()){
