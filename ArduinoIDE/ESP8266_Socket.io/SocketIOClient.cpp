@@ -261,6 +261,7 @@ void SocketIOClient::readLine() {
 }
 
 void SocketIOClient::emit(String fun, String dat) {
+	if (dat.indexOf("\n"!=-1)){dat = dat.substring(0, dat.indexOf("\n")-1);}
 	String message = "42[\"" + fun + "\",\"" + dat + "\"]";
 	int header[10];
 	header[0] = 0x81;

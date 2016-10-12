@@ -52,7 +52,6 @@ void setup() {
 void loop() {
   if (Serial.available()){
     message = (Serial.readString());
-    message = message.substring(0, message.indexOf("\n")-1);
     socket.emit("chat message", message);
     Serial.read();
   }

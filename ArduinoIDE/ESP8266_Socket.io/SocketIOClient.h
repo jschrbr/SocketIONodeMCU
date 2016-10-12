@@ -21,10 +21,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 */
-
-
 #include "Arduino.h"
-
 #include <ESP8266WiFi.h>				//For ESP8266
 
 
@@ -41,7 +38,6 @@ public:
 	bool on();
 	void emit(String fun, String dat);
 	void heartbeat(int select);
-
 
 private:
 	void socker(int index);
