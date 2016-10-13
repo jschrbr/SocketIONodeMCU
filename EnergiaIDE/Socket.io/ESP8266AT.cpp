@@ -76,8 +76,6 @@ bool ESP8266AT::setup(int baud){
   Serial1.begin(baud);
   delay(100);
   rx_empty();
-  Serial1.println("AT+RESTORE");
-  delay(7000);
   Serial1.println("AT+CWMODE=1");
   delay(100);
   Serial1.println("AT+CIPMUX=0");
